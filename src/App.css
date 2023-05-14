@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400&family=Carlito:wght@400;700&family=Comme:wght@100&family=Crimson+Text:wght@400;600;700&family=Exo+2:wght@100;200;300;400;500&family=Fira+Sans:wght@100;900&family=Libre+Baskerville&family=Lora&family=Noto+Serif+JP:wght@200;400;700&family=PT+Serif&family=Source+Serif+Pro:wght@200&display=swap");
+
+/*
+font-family: 'Cairo', sans-serif;
+font-family: 'Carlito', sans-serif;
+font-family: 'Comme', sans-serif;
+font-family: 'Crimson Text', serif;
+font-family: 'Exo 2', sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Lora', serif;
+font-family: 'Noto Serif JP', serif;
+font-family: 'PT Serif', serif;
+font-family: 'Source Serif Pro', serif;
+*/
+
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* APP */
+.app--container {
+  position: relative;
   min-height: 100vh;
+}
+
+
+/* NAV */
+
+.all--nav {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  width: 100%;
+}
+
+.nav--container {
+  z-index: 9998;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+}
+
+
+.nav--container:hover {
+  background-color: rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  opacity: 1;
+}
+
+
+.nav--container a:link,
+.nav--container a:visited,
+.nav--container a:active {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.nav--container a:hover {
+  color: rgb(36, 255, 3);
+  font-size: 30px;
+}
+
+.nav--title {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 100;
+  color: white;
+  text-shadow: 1px 1px 0px rgb(180, 193, 53)
+}
+
+
+.nav--home{
+  font-family: 'Carlito', sans-serif;
+  margin-right: 3rem;
+}
+
+/* WELCOME */
+
+.boxes--container {
+  position: fixed;
+  top:50%;
+  left:10%;
+  transform: translate(-50%, -50%);
+  width: 15rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  z-index: 9999;
+}
+
+.welcome--box {
+  border-radius: 50%;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.4) 5.66%, rgba(0, 0, 0, 0.4) 94.35%);
+  padding: 1.5rem;
+  margin: 0;
+  width: 10rem;
+  transition: 0.3s;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 60%;
+}
+
+.welcome--box:hover {
+  background-image: radial-gradient(rgba(148, 255, 151, 0.82) 5.66%, rgba(14, 199, 1, 0.73) 94.35%);
+  width: 100%;
+  font-size: 25px;
+  text-shadow: 2px 2px 0px #000000;
+  margin-left: 60%;
+}
+
+.welcome--text {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+@media only screen and (max-width: 800px){
+	.welcome--box {
+    padding: 0.3rem;
+    width: 10rem;
+    margin-left: 2rem;
+  }
+  .welcome--box:hover {
+    padding: 0.3rem;
+    width: 15rem;
+    margin-left: 2rem;
+  }
+  .boxes--container {
+    margin-top: 9rem;
+    margin-left: 5rem;
+    gap: 5px;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* ABOUT */
+
+.about--container {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 156, 247, 0.4), rgba(53, 253, 56, 0.733));
+}
+
+/* RESUME */
+.resume--container {
+  height: 100vh;
+  background-image: linear-gradient(rgba(247, 202, 0, 0.4), rgba(29, 198, 236, 0.733));
+}
+
+/* ARTWORK */
+
+.artwork--container {
+  height: 100vh;
+  background-image: linear-gradient(rgba(247, 0, 202, 0.4), rgba(219, 236, 29, 0.733));
 }
